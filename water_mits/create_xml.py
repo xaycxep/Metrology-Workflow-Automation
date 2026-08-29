@@ -84,7 +84,7 @@ def create_verification_xml(results: list, output_file: str):
         ET.SubElement(conditions, "gost:hymidity").text = data.get("hymidity", "")
 
         if '-' not in data.get('mitypeNumber'):
-            ET.SubElement(result, 'gost:additional_info').text = 'Примечание для СИ которых нет в реестре'
+            ET.SubElement(result, 'gost:additional_info').text = 'Примечание для СИ'
 
 
     # Форматирование XML
