@@ -37,7 +37,7 @@ def create_verification_xml(results: list, output_file: str):
         ET.SubElement(single_mi, "gost:modification").text = data.get("modification", "")
         
         # Организация и владелец
-        ET.SubElement(result, "gost:signCipher").text = 'КД'
+        ET.SubElement(result, "gost:signCipher").text = 'Шифр организации'
         ET.SubElement(result, "gost:miOwner").text = data.get("miOwner", "")
 
         # Даты
@@ -68,7 +68,7 @@ def create_verification_xml(results: list, output_file: str):
         means = ET.SubElement(result, "gost:means")
 
         uve = ET.SubElement(means, "gost:uve")
-        ET.SubElement(uve, "gost:number").text = "Номер эталона с внесенного в АРШИН"
+        ET.SubElement(uve, "gost:number").text = "Номер эталона внесенного в АРШИН"
 
         if "mis" in data:
             mis = ET.SubElement(means, "gost:mis")
